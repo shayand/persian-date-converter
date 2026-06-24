@@ -8,9 +8,10 @@ import java.util.Map;
 
 /**
  * Persian Date Formatter
- *
+ * <p>
  * کلاس ابزار برای فرمت‌های مختلف تاریخ شمسی
  * شامل فرمت‌های استاندارد، با نام ماه، با نام روز هفته و اعداد فارسی
+ * </p>
  *
  * <p>ویژگی‌ها:</p>
  * <ul>
@@ -40,15 +41,11 @@ import java.util.Map;
  * // خروجی: ۱۴۰۵/۰۴/۰۳
  * </pre>
  *
- * @category   DateConverter
- * @package    net.sepidan.format
- * @author     Sepidan Team (Shayan Davarzani [shayandavarzani@gmail.com])
- * @copyright  Copyright (c) 2026 Sepidan (info@sepidan.net)
- * @license    MIT License
- * @version    1.0.0
- * @see        net.sepidan.converter.PersianDateConverter
- * @see        net.sepidan.format.PersianDateFormatter.PersianDateParts
- * @since      1.0.0
+ * @author Sepidan Team (Shayan Davarzani [shayandavarzani@gmail.com])
+ * @version 1.0.0
+ * @see net.sepidan.converter.PersianDateConverter
+ * @see net.sepidan.format.PersianDateFormatter.PersianDateParts
+ * @since 1.0.0
  */
 public final class PersianDateFormatter {
 
@@ -119,6 +116,11 @@ public final class PersianDateFormatter {
         PERSIAN_NUMBERS.put("9", "۹");
     }
 
+    /**
+     * سازنده خصوصی برای جلوگیری از نمونه‌سازی
+     *
+     * @throws UnsupportedOperationException همیشه پرتاب می‌شود
+     */
     private PersianDateFormatter() {
         throw new UnsupportedOperationException("Utility class cannot be instantiated");
     }
@@ -127,7 +129,6 @@ public final class PersianDateFormatter {
 
     /**
      * فرمت استاندارد با اسلش
-     *
      * <p>مثال: ۱۴۰۵/۰۴/۰۳</p>
      *
      * @param date تاریخ میلادی
@@ -140,7 +141,6 @@ public final class PersianDateFormatter {
 
     /**
      * فرمت با خط تیره
-     *
      * <p>مثال: ۱۴۰۵-۰۴-۰۳</p>
      *
      * @param date تاریخ میلادی
@@ -153,7 +153,6 @@ public final class PersianDateFormatter {
 
     /**
      * فرمت با نام ماه کامل
-     *
      * <p>مثال: ۰۳ تیر ۱۴۰۵</p>
      *
      * @param date تاریخ میلادی
@@ -166,7 +165,6 @@ public final class PersianDateFormatter {
 
     /**
      * فرمت با نام روز هفته و ماه کامل
-     *
      * <p>مثال: چهارشنبه ۰۳ تیر ۱۴۰۵</p>
      *
      * @param date تاریخ میلادی
@@ -179,7 +177,6 @@ public final class PersianDateFormatter {
 
     /**
      * فرمت با اعداد فارسی
-     *
      * <p>مثال: ۱۴۰۵/۰۴/۰۳</p>
      *
      * @param date تاریخ میلادی
@@ -193,7 +190,6 @@ public final class PersianDateFormatter {
 
     /**
      * فرمت با اعداد فارسی و نام ماه
-     *
      * <p>مثال: ۰۳ تیر ۱۴۰۵</p>
      *
      * @param date تاریخ میلادی
@@ -207,7 +203,6 @@ public final class PersianDateFormatter {
 
     /**
      * فرمت با اسلش و اعداد فارسی
-     *
      * <p>مثال: ۱۴۰۵/۰۴/۰۳</p>
      *
      * @param date تاریخ میلادی
@@ -220,7 +215,6 @@ public final class PersianDateFormatter {
 
     /**
      * فرمت با خط تیره و اعداد فارسی
-     *
      * <p>مثال: ۱۴۰۵-۰۴-۰۳</p>
      *
      * @param date تاریخ میلادی
@@ -234,7 +228,6 @@ public final class PersianDateFormatter {
 
     /**
      * فرمت با نام ماه و اعداد فارسی
-     *
      * <p>مثال: ۰۳ تیر ۱۴۰۵</p>
      *
      * @param date تاریخ میلادی
@@ -247,7 +240,6 @@ public final class PersianDateFormatter {
 
     /**
      * فرمت کامل با نام روز هفته، نام ماه و اعداد فارسی
-     *
      * <p>مثال: چهارشنبه ۰۳ تیر ۱۴۰۵</p>
      *
      * @param date تاریخ میلادی
@@ -292,7 +284,6 @@ public final class PersianDateFormatter {
 
     /**
      * دریافت اجزای تاریخ شمسی به صورت Record
-     *
      * <p>مثال:</p>
      * <pre>
      * PersianDateParts parts = PersianDateFormatter.getDateParts(date);
@@ -379,13 +370,14 @@ public final class PersianDateFormatter {
 
     /**
      * Persian Date Parts Record
-     *
+     * <p>
      * کلاس Record برای نگهداری اجزای تاریخ شمسی
      * شامل سال، ماه و روز به صورت اعداد
-     *
-     * <p>این کلاس به صورت Immutable طراحی شده و برای استفاده در
-     * Stream API و Collections مناسب است.</p>
-     *
+     * </p>
+     * <p>
+     * این کلاس به صورت Immutable طراحی شده و برای استفاده در
+     * Stream API و Collections مناسب است.
+     * </p>
      * <p>مثال استفاده:</p>
      * <pre>
      * PersianDateParts parts = new PersianDateParts(1405, 4, 3);
@@ -395,14 +387,10 @@ public final class PersianDateFormatter {
      * System.out.println(parts);          // 1405/04/03
      * </pre>
      *
-     * @category   DateConverter
-     * @package    net.sepidan.format
-     * @author     Sepidan Team
-     * @copyright  Copyright (c) 2026 Sepidan (info@sepidan.net)
-     * @license    MIT License
-     * @version    1.0.0
-     * @see        net.sepidan.format.PersianDateFormatter
-     * @since      1.0.0
+     * @author Sepidan Team
+     * @version 1.0.0
+     * @see net.sepidan.format.PersianDateFormatter
+     * @since 1.0.0
      */
     public record PersianDateParts(int year, int month, int day) {
 
@@ -462,7 +450,7 @@ public final class PersianDateFormatter {
         /**
          * بررسی اعتبار تاریخ
          *
-         * @return true اگر تاریخ معتبر باشد
+         * @return {@code true} اگر تاریخ معتبر باشد
          * @since 1.0.0
          */
         public boolean isValid() {

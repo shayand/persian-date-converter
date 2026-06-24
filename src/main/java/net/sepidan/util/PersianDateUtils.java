@@ -7,7 +7,9 @@ import net.sepidan.converter.PersianDateConverter;
 /**
  * Persian Date Utilities
  * <p>
- * کلاس ابزار برای کار با تاریخ‌های شمسی شامل متدهای کمکی برای محاسبات، اعتبارسنجی و عملیات روزمره
+ * کلاس ابزار برای کار با تاریخ‌های شمسی
+ * شامل متدهای کمکی برای محاسبات، اعتبارسنجی و عملیات روزمره
+ * </p>
  *
  * <p>ویژگی‌ها:</p>
  * <ul>
@@ -20,16 +22,18 @@ import net.sepidan.converter.PersianDateConverter;
  *
  * @author Sepidan Team (Shayan Davarzani [shayandavarzani@gmail.com])
  * @version 1.0.0
- * @category DateConverter
- * @package net.sepidan.util
- * @copyright Copyright (c) 2026 Sepidan (info@sepidan.net)
- * @license MIT License
  * @see net.sepidan.converter.PersianDateConverter
  * @since 1.0.0
  */
 public final class PersianDateUtils {
 
+    /**
+     * سازنده خصوصی برای جلوگیری از نمونه‌سازی
+     *
+     * @throws UnsupportedOperationException همیشه پرتاب می‌شود
+     */
     private PersianDateUtils() {
+        throw new UnsupportedOperationException("Utility class cannot be instantiated");
     }
 
     /**
@@ -38,14 +42,12 @@ public final class PersianDateUtils {
      * @param year  سال شمسی
      * @param month ماه شمسی (۱ تا ۱۲)
      * @param day   روز شمسی (۱ تا ۳۱)
-     * @return true اگر تاریخ معتبر باشد
+     * @return {@code true} اگر تاریخ معتبر باشد
      * @since 1.0.0
      */
     public static boolean isValidPersianDate(int year, int month, int day) {
         try {
-            // سعی در ساخت تاریخ شمسی
-            PersianDateConverter.getPersianCalendar(
-                LocalDate.of(year + 621, month, day));
+            PersianDateConverter.toGregorian(year, month, day);
             return true;
         } catch (Exception e) {
             return false;
@@ -109,7 +111,7 @@ public final class PersianDateUtils {
      * بررسی اینکه آیا تاریخ میلادی امروز است
      *
      * @param date تاریخ میلادی
-     * @return true اگر تاریخ امروز باشد
+     * @return {@code true} اگر تاریخ امروز باشد
      * @since 1.0.0
      */
     public static boolean isToday(LocalDate date) {
@@ -120,7 +122,7 @@ public final class PersianDateUtils {
      * بررسی اینکه آیا تاریخ شمسی امروز است
      *
      * @param persianDateStr تاریخ شمسی به صورت رشته (yyyy/MM/dd)
-     * @return true اگر تاریخ امروز باشد
+     * @return {@code true} اگر تاریخ امروز باشد
      * @throws IllegalArgumentException اگر تاریخ نامعتبر باشد
      * @since 1.0.0
      */

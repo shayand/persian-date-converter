@@ -17,21 +17,18 @@ import org.junit.jupiter.api.Test;
 
 /**
  * Persian Date Converter Test
- *
+ * <p>
  * کلاس تست برای بررسی عملکرد کتابخانه تبدیل تاریخ
  * شامل تست‌های تبدیل میلادی به شمسی، شمسی به میلادی،
  * فرمت‌ها، اعتبارسنجی و محاسبات مختلف
+ * </p>
  *
- * @category   DateConverter
- * @package    net.sepidan
- * @author     Sepidan Team
- * @copyright  Copyright (c) 2026 Sepidan (info@sepidan.net)
- * @license    MIT License
- * @version    1.0.0
- * @see        net.sepidan.converter.PersianDateConverter
- * @see        net.sepidan.format.PersianDateFormatter
- * @see        net.sepidan.util.PersianDateUtils
- * @since      1.0.0
+ * @author Sepidan Team
+ * @version 1.0.0
+ * @see net.sepidan.converter.PersianDateConverter
+ * @see net.sepidan.format.PersianDateFormatter
+ * @see net.sepidan.util.PersianDateUtils
+ * @since 1.0.0
  */
 @DisplayName("تست‌های کتابخانه تبدیل تاریخ شمسی")
 public class PersianDateConverterTest {

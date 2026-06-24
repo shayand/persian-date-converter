@@ -11,52 +11,33 @@ import net.time4j.calendar.PersianCalendar;
 import net.time4j.engine.EpochDays;
 
 /**
- * Persian Date Converter
+ * Date Conversion Exception
  * <p>
- * کلاس اصلی برای تبدیل تاریخ میلادی به شمسی و برعکس با استفاده از کتابخانه Time4J و کلاس
- * PersianCalendar
+ * Exception سفارشی برای خطاهای مربوط به تبدیل تاریخ
+ * این کلاس برای مدیریت خطاهای تبدیل تاریخ میلادی به شمسی و برعکس استفاده می‌شود
+ * </p>
  *
- * <p>ویژگی‌ها:</p>
+ * <p>موارد استفاده:</p>
  * <ul>
- *   <li>تبدیل میلادی به شمسی با فرمت‌های مختلف</li>
- *   <li>تبدیل شمسی به میلادی با اعتبارسنجی</li>
- *   <li>دریافت نام روز هفته و ماه به فارسی</li>
- *   <li>بررسی سال کبیسه و تعداد روزهای ماه</li>
- *   <li>دریافت شماره روز و هفته در سال</li>
- *   <li>قابل استفاده در MapStruct</li>
- *   <li>پشتیبانی از Recordها</li>
- *   <li>پشتیبانی از LocalDate، LocalDateTime، ZonedDateTime و Date</li>
- *   <li>کمترین تولید Garbage</li>
- *   <li>Thread-Safe</li>
+ *   <li>تاریخ شمسی نامعتبر</li>
+ *   <li>فرمت تاریخ نادرست</li>
+ *   <li>خطا در تبدیل تقویم</li>
+ *   <li>خطا در پردازش تاریخ</li>
  * </ul>
  *
  * <p>مثال استفاده:</p>
  * <pre>
- * // تبدیل میلادی به شمسی
- * LocalDate date = LocalDate.of(2026, 6, 24);
- * String persian = PersianDateConverter.toPersian(date);
- * // خروجی: 1405/04/03
- *
- * // تبدیل شمسی به میلادی
- * LocalDate gregorian = PersianDateConverter.toGregorian(1405, 4, 3);
- * // خروجی: 2026-06-24
- *
- * // دریافت اطلاعات کامل
- * PersianDateInfo info = PersianDateConverter.getPersianDateInfo(date);
- * System.out.println(info.toFullString());
- * // خروجی: چهارشنبه 3 تیر 1405
+ * try {
+ *     LocalDate date = PersianDateConverter.toGregorian(1403, 13, 1);
+ * } catch (DateConversionException e) {
+ *     System.err.println("خطا در تبدیل تاریخ: " + e.getMessage());
+ * }
  * </pre>
  *
  * @author Sepidan Team (Shayan Davarzani [shayandavarzani@gmail.com])
  * @version 1.0.0
- * @category DateConverter
- * @package net.sepidan.converter
- * @copyright Copyright (c) 2026 Sepidan (info@sepidan.net)
- * @license MIT License
- * @see net.time4j.calendar.PersianCalendar
- * @see net.sepidan.format.PersianDateFormatter
- * @see net.sepidan.util.PersianDateUtils
- * @see net.sepidan.converter.PersianDateConverter.PersianDateInfo
+ * @see net.sepidan.converter.PersianDateConverter
+ * @see java.lang.RuntimeException
  * @since 1.0.0
  */
 public final class PersianDateConverter {
@@ -625,13 +606,9 @@ public final class PersianDateConverter {
      * System.out.println(info.toFullString());   // چهارشنبه 3 تیر 1405
      * </pre>
      *
-     * @author Sepidan Team
+     * @author Sepidan Team (Shayan Davarzani [shayandavarzani@gmail.com])
      * @version 1.0.0
-     * @category DateConverter
-     * @package net.sepidan.converter
-     * @copyright Copyright (c) 2026 Sepidan (info@sepidan.net)
-     * @license MIT License
-     * @see net.sepidan.converter.PersianDateConverter
+     * @see net.sepidan.converter.PersianDateConverter.PersianDateInfo
      * @since 1.0.0
      */
     public static final class PersianDateInfo {

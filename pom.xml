@@ -7,6 +7,9 @@
 
     <groupId>net.sepidan</groupId>
     <artifactId>persian-date-converter</artifactId>
+    <name>Persian Date Converter</name>
+    <description>A library for converting Persian date and prepared for modern Java / Kotlin development</description>
+    <url>https://github.com/shayand/persian-date-converter</url>
     <developers>
         <developer>
             <name>Shayan Davarzani</name>
@@ -86,7 +89,7 @@
             <plugin>
                 <groupId>org.sonatype.central</groupId>
                 <artifactId>central-publishing-maven-plugin</artifactId>
-                <version>0.7.0</version>
+                <version>0.8.0</version>
                 <extensions>true</extensions>
                 <configuration>
                     <publishingServerId>ossrh</publishingServerId>
