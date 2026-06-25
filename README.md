@@ -35,7 +35,7 @@
 ### یا در صورت استفاده از build.gradle:
 
 ```gradle
-implementation 'net.sepidan:persian-date-converter:1.0.0'
+implementation 'net.sepidan:persian-date-converter:1.0.1'
 ```
 
 ## 🚀 راهنمای استفاده
