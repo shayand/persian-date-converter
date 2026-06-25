@@ -6,10 +6,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDate;
 
-import net.sepidan.converter.PersianDateConverter;
-import net.sepidan.converter.PersianDateConverter.PersianDateInfo;
-import net.sepidan.format.PersianDateFormatter;
-import net.sepidan.util.PersianDateUtils;
+import net.sepidan.persiandate.converter.PersianDateConverter;
+import net.sepidan.persiandate.converter.PersianDateConverter.PersianDateInfo;
+import net.sepidan.persiandate.format.PersianDateFormatter;
+import net.sepidan.persiandate.util.PersianDateUtils;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -25,9 +25,9 @@ import org.junit.jupiter.api.Test;
  *
  * @author Sepidan Team
  * @version 1.0.0
- * @see net.sepidan.converter.PersianDateConverter
- * @see net.sepidan.format.PersianDateFormatter
- * @see net.sepidan.util.PersianDateUtils
+ * @see PersianDateConverter
+ * @see PersianDateFormatter
+ * @see PersianDateUtils
  * @since 1.0.0
  */
 @DisplayName("تست‌های کتابخانه تبدیل تاریخ شمسی")

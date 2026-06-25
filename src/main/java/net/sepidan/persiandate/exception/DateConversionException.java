@@ -1,4 +1,6 @@
-package net.sepidan.exception;
+package net.sepidan.persiandate.exception;
+
+import net.sepidan.persiandate.converter.PersianDateConverter;
 
 /**
  * Date Conversion Exception
@@ -26,7 +28,7 @@ package net.sepidan.exception;
  *
  * @author Sepidan Team (Shayan Davarzani [shayandavarzani@gmail.com])
  * @version 1.0.0
- * @see net.sepidan.converter.PersianDateConverter
+ * @see PersianDateConverter
  * @see java.lang.RuntimeException
  * @since 1.0.0
  */

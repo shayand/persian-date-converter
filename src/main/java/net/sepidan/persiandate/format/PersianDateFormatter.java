@@ -1,6 +1,6 @@
-package net.sepidan.format;
+package net.sepidan.persiandate.format;
 
-import net.sepidan.converter.PersianDateConverter;
+import net.sepidan.persiandate.converter.PersianDateConverter;
 
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -43,8 +43,8 @@ import java.util.Map;
  *
  * @author Sepidan Team (Shayan Davarzani [shayandavarzani@gmail.com])
  * @version 1.0.0
- * @see net.sepidan.converter.PersianDateConverter
- * @see net.sepidan.format.PersianDateFormatter.PersianDateParts
+ * @see PersianDateConverter
+ * @see PersianDateFormatter.PersianDateParts
  * @since 1.0.0
  */
 public final class PersianDateFormatter {
@@ -389,7 +389,7 @@ public final class PersianDateFormatter {
      *
      * @author Sepidan Team
      * @version 1.0.0
-     * @see net.sepidan.format.PersianDateFormatter
+     * @see PersianDateFormatter
      * @since 1.0.0
      */
     public record PersianDateParts(int year, int month, int day) {

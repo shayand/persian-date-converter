@@ -1,4 +1,4 @@
-package net.sepidan.converter;
+package net.sepidan.persiandate.converter;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -36,7 +36,7 @@ import net.time4j.engine.EpochDays;
  *
  * @author Sepidan Team (Shayan Davarzani [shayandavarzani@gmail.com])
  * @version 1.0.0
- * @see net.sepidan.converter.PersianDateConverter
+ * @see PersianDateConverter
  * @see java.lang.RuntimeException
  * @since 1.0.0
  */
@@ -608,7 +608,7 @@ public final class PersianDateConverter {
      *
      * @author Sepidan Team (Shayan Davarzani [shayandavarzani@gmail.com])
      * @version 1.0.0
-     * @see net.sepidan.converter.PersianDateConverter.PersianDateInfo
+     * @see PersianDateConverter.PersianDateInfo
      * @since 1.0.0
      */
     public static final class PersianDateInfo {

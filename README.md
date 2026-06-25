@@ -43,10 +43,11 @@ implementation 'net.sepidan:persian-date-converter:1.0.0'
 ### ۱. تبدیل تاریخ میلادی به شمسی
 
 ```java
-import net.sepidan.converter.PersianDateConverter;
+import net.sepidan.persiandate.converter.PersianDateConverter;
 import java.time.LocalDate;
 
 public class Example {
+
     public static void main(String[] args) {
         LocalDate gregorianDate = LocalDate.of(2026, 6, 24);
 
@@ -78,43 +79,59 @@ System.out.println(monthName); // خروجی: تیر
 ### ۳. فرمت‌های مختلف با کلاس PersianDateFormatter
 
 ```java
-import net.sepidan.format.PersianDateFormatter;
-import net.sepidan.format.PersianDateFormatter.PersianDateParts;
+import net.sepidan.persiandate.format.PersianDateFormatter;
+import net.sepidan.persiandate.format.PersianDateFormatter.PersianDateParts;
 import java.time.LocalDate;
 
 LocalDate date = LocalDate.of(2026, 6, 24);
 
 // فرمت استاندارد با اسلش
-System.out.println(PersianDateFormatter.formatStandard(date));
+System.out.
+
+println(PersianDateFormatter.formatStandard(date));
 // خروجی: ۱۴۰۲/۰۴/۰۳
 
 // فرمت با خط تیره
-System.out.println(PersianDateFormatter.formatWithDash(date));
+    System.out.
+
+println(PersianDateFormatter.formatWithDash(date));
 // خروجی: ۱۴۰۲-۰۴-۰۳
 
 // فرمت با نام ماه کامل
-System.out.println(PersianDateFormatter.formatWithMonthName(date));
+    System.out.
+
+println(PersianDateFormatter.formatWithMonthName(date));
 // خروجی: ۰۳ تیر ۱۴۰۲
 
 // فرمت با نام روز هفته
-System.out.println(PersianDateFormatter.formatWithWeekday(date));
+    System.out.
+
+println(PersianDateFormatter.formatWithWeekday(date));
 // خروجی: سه‌شنبه ۰۳ تیر ۱۴۰۲
 
 // فرمت با اعداد فارسی
-System.out.println(PersianDateFormatter.formatWithPersianNumbers(date));
+    System.out.
+
+println(PersianDateFormatter.formatWithPersianNumbers(date));
 // خروجی: ۱۴۰۲/۰۴/۰۳
 
 // دریافت اجزای تاریخ به صورت Record
 PersianDateParts parts = PersianDateFormatter.getDateParts(date);
-System.out.println(parts.year());   // ۱۴۰۲
-System.out.println(parts.month());  // ۴
-System.out.println(parts.day());    // ۳
+System.out.
+
+println(parts.year());   // ۱۴۰۲
+    System.out.
+
+println(parts.month());  // ۴
+    System.out.
+
+println(parts.day());    // ۳
 ```
 
 ### ۴. استفاده در MapStruct
 
 ```java
-import net.sepidan.converter.PersianDateConverter;
+import net.sepidan.persiandate.converter.PersianDateConverter;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
@@ -170,13 +187,17 @@ System.out.println(days); // ۳۱
 ### ۷. تاریخ امروز
 
 ```java
-import net.sepidan.util.PersianDateUtils;
+import net.sepidan.persiandate.util.PersianDateUtils;
 
 String today = PersianDateUtils.today();
-System.out.println(today); // خروجی: ۱۴۰۲/۰۴/۰۳
+System.out.
+
+println(today); // خروجی: ۱۴۰۲/۰۴/۰۳
 
 String todayWithMonth = PersianDateUtils.today("dd MMMM yyyy");
-System.out.println(todayWithMonth); // خروجی: ۰۳ تیر ۱۴۰۲
+System.out.
+
+println(todayWithMonth); // خروجی: ۰۳ تیر ۱۴۰۲
 ```
 
 ### ۸. کار با java.util.Date
@@ -322,6 +343,10 @@ public class PersianDateConverterTest {
 }
 ```
 
+#### متودهای اضافی
+سایر متودها و استفاده ها در ۲۳ تست کیس موجود در این کلاس قابل دستیابی است
+---
+
 ## ⚡ نکات عملکردی
 
 کمترین تولید Garbage: استفاده از Time4J بهینه‌سازی شده برای کاهش تولید اشیاء زائد
@@ -352,7 +377,9 @@ Java 17 یا بالاتر
 
 ایمیل: info@sepidan.net
 
-## تاریخ آخرین به‌روزرسانی: ۲۴ ژوئن ۲۰۲۶
+ایمیل: shayandavarzani@gmail.com
+
+## تاریخ آخرین به‌روزرسانی: ۲۴ ژوئن ۲۰۲۶ یا ۳ تیر ۱۴۰۵
 
 ## ⭐ حمایت
 

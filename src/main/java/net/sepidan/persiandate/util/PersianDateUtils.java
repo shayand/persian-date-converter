@@ -1,8 +1,8 @@
-package net.sepidan.util;
+package net.sepidan.persiandate.util;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import net.sepidan.converter.PersianDateConverter;
+import net.sepidan.persiandate.converter.PersianDateConverter;
 
 /**
  * Persian Date Utilities
@@ -22,7 +22,7 @@ import net.sepidan.converter.PersianDateConverter;
  *
  * @author Sepidan Team (Shayan Davarzani [shayandavarzani@gmail.com])
  * @version 1.0.0
- * @see net.sepidan.converter.PersianDateConverter
+ * @see PersianDateConverter
  * @since 1.0.0
  */
 public final class PersianDateUtils {
