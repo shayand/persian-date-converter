@@ -28,7 +28,7 @@
 <dependency>
     <groupId>net.sepidan</groupId>
     <artifactId>persian-date-converter</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
