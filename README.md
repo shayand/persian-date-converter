@@ -28,14 +28,14 @@
 <dependency>
     <groupId>net.sepidan</groupId>
     <artifactId>persian-date-converter</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 </dependency>
 ```
 
 ### یا در صورت استفاده از build.gradle:
 
 ```gradle
-implementation 'net.sepidan:persian-date-converter:1.0.2'
+implementation 'net.sepidan:persian-date-converter:1.0.3'
 ```
 
 ## 🚀 راهنمای استفاده
