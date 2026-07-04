@@ -1,5 +1,7 @@
 package net.sepidan.persiandate.converter;
 
+import static net.sepidan.persiandate.format.PersianDateFormatter.FORMAT_WITH_TIME;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -13,8 +15,8 @@ import net.time4j.engine.EpochDays;
 /**
  * Date Conversion Exception
  * <p>
- * Exception سفارشی برای خطاهای مربوط به تبدیل تاریخ
- * این کلاس برای مدیریت خطاهای تبدیل تاریخ میلادی به شمسی و برعکس استفاده می‌شود
+ * Exception سفارشی برای خطاهای مربوط به تبدیل تاریخ این کلاس برای مدیریت خطاهای تبدیل تاریخ میلادی
+ * به شمسی و برعکس استفاده می‌شود
  * </p>
  *
  * <p>موارد استفاده:</p>
@@ -149,6 +151,45 @@ public final class PersianDateConverter {
         }
 
         return formatPersianDate(year, month, day, pattern);
+    }
+
+    /**
+     * تبدیل LocalDateTime میلادی به تاریخ شمسی با فرمت دلخواه
+     *
+     * <p>فرمت‌های پشتیبانی شده:</p>
+     * <ul>
+     *   <li>yyyy/MM/dd hh:mm:ss - مثال: 23:59:59 1405/04/03</li>
+     *   <li>yyyy-MM-dd hh:mm:ss - مثال: 23:59:59 1405-04-03</li>
+     *   <li>yyyy MM dd hh:mm:ss - مثال: 23:59:59 1405 04 03</li>
+     *   <li>dd/MM/yyyy hh:mm:ss - مثال: 23:59:59 03/04/1405</li>
+     *   <li>dd-MM-yyyy hh:mm:ss - مثال: 23:59:59 03-04-1405</li>
+     * </ul>
+     *
+     * @param gregorianDate تاریخ میلادی
+     * @param pattern       الگوی فرمت
+     * @return تاریخ شمسی فرمت شده
+     * @throws IllegalArgumentException اگر الگوی فرمت نامعتبر باشد
+     * @since 1.0.0
+     */
+    public static String toPersianWithTime(LocalDateTime gregorianDate, String pattern) {
+        if (gregorianDate == null) {
+            return null;
+        }
+
+        PersianCalendar persian = toPersianCalendar(LocalDate.from(gregorianDate));
+        int year = persian.getYear();
+        int month = persian.getMonth().getValue();
+        int day = persian.getDayOfMonth();
+
+        if (pattern == null || pattern.isEmpty()) {
+            pattern = "yyyy/MM/dd";
+        }
+        StringBuilder sb = new StringBuilder(formatPersianDate(year, month, day, pattern));
+        sb.append(String.format("%02d", gregorianDate.getHour()))
+            .append(String.format("%02d", gregorianDate.getMinute()))
+            .append(String.format("%02d", gregorianDate.getSecond()));
+
+        return sb.toString();
     }
 
     /**
