@@ -185,7 +185,7 @@ public final class PersianDateConverter {
             pattern = "yyyy/MM/dd";
         }
         StringBuilder sb = new StringBuilder(formatPersianDate(year, month, day, pattern));
-        sb.append(String.format("%02d", gregorianDate.getHour()))
+        sb.append(" ").append(String.format("%02d", gregorianDate.getHour()))
             .append(String.format("%02d", gregorianDate.getMinute()))
             .append(String.format("%02d", gregorianDate.getSecond()));
 
